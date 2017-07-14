@@ -1,3 +1,5 @@
+'use strict';
+
 function Tictactoe() {
 
   this.board;
@@ -82,6 +84,8 @@ function Tictactoe() {
 /*
   Exporta esta clase para que test.js puede requerirlo
 */
-if(typeof exports !== 'undefined') {
-  exports.Tictactoe = Tictactoe;
-}
+//if(typeof exports !== 'undefined') {
+  //exports.Tictactoe = Tictactoe;
+//}
+
+
