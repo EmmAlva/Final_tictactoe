@@ -1,5 +1,5 @@
 'use strict';
-const Comments = () =>{
+const Comments = (winner, loser, move) =>{
 	const section = $('<section class="cabecera"></section>');
 	const header = $('<header class="cabecera"></header>');
 	const inicio = $('<span>Inicio</span>');
@@ -7,7 +7,7 @@ const Comments = () =>{
 	const historia = $('<span>Historia</span>');
 	const col = $('<div class="col-lg-12></div>');
 	const div = $('<div class="historial" id="historial"></div>');
-	const p =$('<p>(ganador)  le gano a  (perdedor) en (#mov)</p>');
+	const p =$('<p>'+winner+' le gano a '+loser+'en '+move+'movimientos</p>');
 	const h5 = $('<h5>Comentarios</h5>');
 	const div1 = $('<div id="comments"></div>');
 	const p1 = $('<p>nombre dice: </p>');
@@ -30,6 +30,8 @@ const Comments = () =>{
 	section.append(p3,p4);
 	section.append(btn);
 	section.append(response);
+
+	$.get('')
 	
 
 
