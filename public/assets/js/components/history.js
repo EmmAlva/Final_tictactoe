@@ -34,27 +34,18 @@ const History = (winner, loser, move) =>{
 		}
 	});
 
-	const historial = {
+	/*const historial = {
 			    "winner_player": winner,
 			    "loser_player": loser,
 			    "number_of_turns_to_win": move,
-			}
+			}*/
 
-		$.ajax({
-			type:'POST',
-			url:'http://test-ta.herokuapp.com/games',
-			data: historial,
-			success: function(newHistoria){
-				console.log(newHistoria);
-				$.each(newHistoria, function(index,ele){
-					console.log(newHistoria[0].winner_player);
-				
-				//$('#historial').append('<p>'+newHistoria[index].winner_player+' le gano a '+newHistoria[index].loser_player+'en '+newHstoria[index].number_of_turns_to_win+'movimientos</p>');
+	
 
-				})
-			}
+			
 
-		});
+
+		
 	
 	$('#comentar').on('click', (e)=>{
 		e.preventDefault();

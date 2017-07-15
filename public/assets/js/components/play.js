@@ -80,7 +80,31 @@ $(function() {
 		console.log(mov);
 		btn_his.on('click', (e)=>{
 			e.preventDefault();
-			$('section').replaceWith(History(jug1, jug2, mov));
+			
+			var historial = {
+			    "winner_player": jug1,
+			    "loser_player": jug2,
+			    "number_of_turns_to_win": mov,
+			};
+
+			$.ajax({
+			type:'POST',
+			url:'http://test-ta.herokuapp.com/games',
+			data: JSON.stringify(historial),
+			dataType: 'json',
+			contentType: "application/json",
+			success: function(newHistoria){
+				console.log(newHistoria);
+				$.each(newHistoria, function(index,ele){
+					$('#historial').append('<p>'+newHistoria.winner_player+' le gano a '+newHistoria.loser_player+'en '+newHistoria.number_of_turns_to_win+' movimientos</p>');
+					$('#historial').append('<span><a href="#" id="comentar">Comentar</a></span>');
+				})
+			}
+		});
+
+			
+			$('section').replaceWith(History(jug1, jug2, mov));	
+
 		});
 
 	}
