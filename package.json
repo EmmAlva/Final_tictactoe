@@ -1,0 +1,30 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Prueba recuperación spring5, peticiones",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmAlva/Final_tictactoe.git"
+  },
+  "keywords": [
+    "get",
+    "post",
+    "ajax"
+  ],
+  "author": "Emma Tapia <emma.alva28@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmmAlva/Final_tictactoe/issues"
+  },
+  "homepage": "https://github.com/EmmAlva/Final_tictactoe#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}

@@ -29,7 +29,7 @@ const History = (winner, loser, move) =>{
 		success: function(data){
 			$.each(data, function(index,ele){
 			$('#historial').append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+'en '+data[index].number_of_turns_to_win+'movimientos</p>');
-			$('#historial').append('<span><a href="#">Comentar</a></span>');
+			$('#historial').append('<span><a href="#" id="comentar">Comentar</a></span>');
 			})				
 		}
 	});
@@ -55,17 +55,13 @@ const History = (winner, loser, move) =>{
 			}
 
 		});
-
-
-
-
 	
-	/*span.on('click', (e)=>{
+	$('#comentar').on('click', (e)=>{
 		e.preventDefault();
 		/*state.nextpage = 5;
 		update();*/
-		/*$('section').replaceWith(Comments(winner, loser, move));
-	});*/
+		$('section').replaceWith(Comments(winner, loser, move));
+	});
 
 	return section;
 }
