@@ -31,7 +31,10 @@ const Comments = (winner, loser, move) =>{
 	section.append(btn);
 	section.append(response);
 
-	$.get('')
+	$.get('url', (error, json)=>{
+
+		state.comentario = json;
+	})
 	
 
 

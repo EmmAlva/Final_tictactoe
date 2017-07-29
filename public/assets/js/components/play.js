@@ -98,7 +98,6 @@ $(function() {
 					$('#historial').append('<span><a href="#" id="comentar">Comentar</a></span>');
 				});
       $('section').replaceWith(History(jug1, jug2, mov)); 
-        
 			}
 		});
 

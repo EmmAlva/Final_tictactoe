@@ -28,8 +28,8 @@ const History = (winner, loser, move) =>{
 		url: 'http://test-ta.herokuapp.com/games',
 		success: function(data){
 			$.each(data, function(index,ele){
-			$('#historial').append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+'en '+data[index].number_of_turns_to_win+'movimientos</p>');
-			$('#historial').append('<span><a href="#" id="comentar">Comentar</a></span>');
+			$('#historial').append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+' en'+data[index].number_of_turns_to_win+' movimientos</p>');
+			$('#historial').append('<a href="#" id="comentar" class ="comment">Comentar</a>');
 			})				
 		}
 	});
@@ -42,11 +42,12 @@ const History = (winner, loser, move) =>{
 
 		
 	
-	$('#comentar').on('click', (e)=>{
+	$('.comment').on('click', (e)=>{
 		e.preventDefault();
+		alert("btn presionado");
 		/*state.nextpage = 5;
 		update();*/
-		$('section').replaceWith(Comments(winner, loser, move));
+		$('section').replaceWith(Comments(winner, loser, move, getComent));
 	});
 
 	return section;

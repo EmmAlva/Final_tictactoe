@@ -27,9 +27,12 @@ const render = (root) => {
 
 const state = {
 	nextpage : null,
+	comentario: null
 }
 
 $( _ => {
 	const root = $('#root');
 	render (root);
 })
+
+
