@@ -1,52 +1,48 @@
 'use strict';
 
 const Players = (update) =>{
-	const section = $('<section ></section>');
-	const header = $('<header ></header>');
+	const section = $('<section id ="second"  ></section>');
+	const header = $('<header class="center-block" ></header>');
 	const inicio = $('<span>Inicio</span>');
 	const icon = $('<span>|</span>');
 	const historia = $('<span>Historia</span>');
-	const col = $('<div class="col-lg-12></div>');
-	const input1 = $('<p>Ingrese el nombre del jugador 1 <input type="text" id="nombre1" required=""></p>');
-	const span1 = $('<span id="req_name1"></span>');
-	const input2 = $('<p>Ingrese el nombre del jugador 2<input type="text" id="nombre2" required=""></p>');
-	const span2 = $('<span id="req_name2"></span>');
+	const form = $('<form id="ingreso_players"></form>');
+	const input1 = $('<p>Ingrese el nombre del jugador 1 <input type="text" id="nombre1"></p>');
+	const div1 = $('<div id="req_name1"></div>');
+	const input2 = $('<p>Ingrese el nombre del jugador 2 <input type="text" id="nombre2"></p>');
+	const div2 = $('<div id="req_name2"></div>');
 	const space = $('<br>');
-	const butn = $('<button><a href="#" id="start">Comenzar</a></button>');
+	const btn = $('<button class="btn btn_color" id="play">Comenzar</button>');
 
-	header.append(inicio,icon,historia);
 	section.append(header);
-	section.append(input1);
-	input1.append(span1);
-	section.append(input2);
-	input2.append(span2);
-	section.append(space);
-	section.append(butn);
+	header.append(inicio,icon,historia);
+	section.append(form);
+	form.append(input1, input2, space, btn);
+	input1.append(div1);
+	input2.append(div2);
 
-	butn.on('click', (e) => {
+	btn.on('click', (e) => {
 		e.preventDefault();	
 		
 		let player1 = $('#nombre1').val();
-		let player2 = $('#nombre2').val();			
+		let player2 = $('#nombre2').val();		
 
-			if($('#nombre1').val() == "" && $('#nombre2').val() == ""){
-				$('#req_name1').text('Complete el campo');
-				$('#req_name2').text('Complete el campo');				
-			}else{
-				$('section').replaceWith(Play(player1,player2));
-			}
-	
-
+		if ($('#nombre1').val() != "" && $('#nombre2').val() == ""){
+			$('#req_name1').text('');		
+			$('#req_name2').text('Campo requerido');		
+		}else if ($('#nombre2').val() != "" && $('#nombre1').val() == ""){
+			$('#req_name2').text('');		
+			$('#req_name1').text('Campo requerido');		
+		} else if($('#nombre1').val() == "" || $('#nombre2').val() == ""){
+			$('#req_name1').text('Campo requerido');
+			$('#req_name2').text('Campo requerido');
+		}
+		else if($('#nombre1').val() != "" && $('#nombre2').val() != ""){
+			$('#req_name1').text('');
+			$('#req_name2').text('');
+			$('section').replaceWith(Play(player1,player2));
+		}
 	});
-
-	
-
-
-
-
-
-
-
 
 	return section;
 }

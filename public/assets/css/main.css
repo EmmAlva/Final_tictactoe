@@ -1,13 +1,114 @@
 body {
   font-family: "Roboto", Arial, sans-serif;
-  margin: 0 auto;
-  text-align: center;
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  /*margin: 0 auto;*/
+ /* text-align: center;
   margin-top: 50px;
   color: #FFF;
   text-shadow: -1px -1px #333;
-  background: #333;
+  background: #333;*/
 }
-body h1 {
+.center-block{
+  width: 70%;
+  margin: 0 auto;
+}
+.txt-center{
+  text-align: center;
+}
+.color1{
+
+}
+.color2{
+  
+}
+.btn{
+  border: none;
+  background-color: none;
+  padding: 10px;
+}
+.btn_color{
+  background-color: rgb(255,48,12);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bold;
+
+}
+/*START*/
+.start{
+ background-image: url('http://lorempixel.com/1000/800/abstract');
+ background-size: cover;
+ background-repeat: no-repeat;
+ height: 100vh;
+ display: flex;
+}
+.contenedor{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+}
+.intro{ 
+  background-color: rgba(25,25,27,0.4);
+  padding: 7%;
+  text-align: center;
+}
+h1{
+  color: #fff;
+  font-size: 3rem;
+}
+#iniciar{
+  padding: 20px;
+}
+
+/*PLAYERS*/
+#second{
+  background-image: url('../img/bg2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+header{
+  display: flex;
+  justify-content: flex-end;
+  padding: 4% 0;
+  font-size: 0.85rem;
+}
+header span{
+  margin: 0 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px outset red;
+  width: 32%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+form p input{
+  margin-left: 20px;
+}
+#ingreso_players div{
+  color: red;
+  text-align: right;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+#play{
+  display: block;
+  margin: auto;
+}
+/*PLAY*/
+
+
+
+
+/*body h1 {
   font-weight: normal;
 }
 body .turn {
@@ -49,3 +150,4 @@ body .square .botones.circle:before {
 #newBoard:hover {
   opacity: 0.8;
 }
+*/

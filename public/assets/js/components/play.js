@@ -3,13 +3,14 @@
 const Play = (player1, player2) =>{
 	console.log(player1);
 	console.log(player2);
-	const section = $('<section class="cabecera"></section>');
-	const header = $('<header ></header>');
-	const inicio = $('<span>Inicio</span>');
-	const icon = $('<span>|</span>');
-	const historia = $('<span>Historia</span>');
+	const section = $('<section id ="second"  ></section>');
+  const header = $('<header class="center-block" ></header>');
+  const inicio = $('<span>Inicio</span>');
+  const icon = $('<span>|</span>');
+  const historia = $('<span>Historia</span>');
+  const container = $('<div id="content_play" class="center-block txt-center"></div>')
 	const message = $('<div class="messages"></div>');
-	const h1 = $('<h1 class="turn"></h1>');
+	const h1 = $('<span class="turn"></span>');
 	const div = $('<div class="square"></div>');
 	const div1 = $('<div></div>');
 	const btn0 = $('<button id="0" class="botones"></button>');
@@ -27,27 +28,24 @@ const Play = (player1, player2) =>{
 	const btn8 = $('<button id="8" class="botones"></button>');
 
 	const space = $('<br>');
+  const move = $('<div class=""></div>');
 	const p1 = $('<p>Movimientos de '+player1+'</p>');
 	const span1  = $('<span id="mov_play1"></span>');
 	const p2 = $('<p>Movimientos de '+player2+'</p>');
 	const span2  = $('<span id="mov_play2"></span>');
 	const p3 = $('<p id="ganador"></p>');
-	const btn_new = $('<button id="newBoard">Nuevo juego</button>');
-	const btn_his = $('<button><a href="history.html">Ir al Historial</a></button>');
+	const reset = $('<button class="btn btn_color" id="newBoard">Nuevo juego</button>');
+	const btNext = $('<button class="btn btn_color">Ir al Historial</button>');
 
-	header.append(inicio,icon,historia);
 	section.append(header);
-	section.append(message);
-	section.append(h1);
-	section.append(div);
-	
+  section.append(container);
+  header.append(inicio,icon,historia);
+  container.append(message, h1, div, space, move);	
 	div.append(div1,div2,div3);
 	div1.append(btn0,btn1,btn2);
 	div2.append(btn3,btn4,btn5);
 	div3.append(btn6,btn7,btn8);
-
-	section.append(space);
-	section.append(p1, span1,p2, span2,p3,btn_new,btn_his);	
+	move.append(p1, span1,p2, span2,p3,reset,btNext);	
 
 
 $(function() {
