@@ -1,5 +1,9 @@
 'use strict';
-const Comments = (winner, loser, move) =>{
+const Comments = (winner, loser, move, id) =>{
+	console.log(id);
+	console.log(winner);
+	console.log(loser);
+	console.log(move);
 	const section = $('<section class="cabecera"></section>');
 	const header = $('<header class="cabecera"></header>');
 	const inicio = $('<span>Inicio</span>');
@@ -31,7 +35,8 @@ const Comments = (winner, loser, move) =>{
 	section.append(btn);
 	section.append(response);
 
-	$.get('url', (error, json)=>{
+
+	$.get('https://test-ta.herokuapp.com/games/' + id, (error, json)=>{
 
 		state.comentario = json;
 	})

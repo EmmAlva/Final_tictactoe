@@ -27,28 +27,34 @@ const History = (winner, loser, move) =>{
 		type:'GET',
 		url: 'http://test-ta.herokuapp.com/games',
 		success: function(data){
+			// console.log(data);
 			$.each(data, function(index,ele){
-			$('#historial').append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+' en'+data[index].number_of_turns_to_win+' movimientos</p>');
-			$('#historial').append('<a href="#" id="comentar" class ="comment">Comentar</a>');
-			})				
+			$('#historial').append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+' en '+data[index].number_of_turns_to_win+' movimientos</p>');
+			$('#historial').append('<button  id='+data[index].id+' class ="comment">Comentar</button>');
+			state.data = data[index];
+			state.id = data[index].id;
+			// console.log(state.id);
+			});
+
+			$('.comment').on('click',function(e){
+				e.preventDefault();
+				var identificador = $(this).attr('id');
+				alert("btn " + identificador + " presionado");
+				console.log(data[identificador]);
+
+				getGame(identificador);
+			});	
 		}
 	});
 
-	/*const historial = {
-			    "winner_player": winner,
-			    "loser_player": loser,
-			    "number_of_turns_to_win": move,
-			}*/
-
-		
-	
-	$('.comment').on('click', (e)=>{
-		e.preventDefault();
-		alert("btn presionado");
-		/*state.nextpage = 5;
-		update();*/
-		$('section').replaceWith(Comments(winner, loser, move, getComent));
-	});
+	function getGame(id){
+		$.getJSON('http://test-ta.herokuapp.com/games/'+id, (json) =>{
+			console.log(json);
+			$('section').replaceWith(Comments(json.winner_player, json.loser_player, json.number_of_turns_to_win, json.id));
+			})
+	}	
 
 	return section;
+	
 }
+

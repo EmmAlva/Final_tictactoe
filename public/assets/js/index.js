@@ -27,7 +27,9 @@ const render = (root) => {
 
 const state = {
 	nextpage : null,
-	comentario: null
+	comentario: null, 
+	data: null,
+	id: null
 }
 
 $( _ => {
