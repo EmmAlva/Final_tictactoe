@@ -11,7 +11,7 @@ const Comments = (winner, loser, move, id) =>{
 	const historia = $('<span>Historia</span>');
 	const col = $('<div class="col-lg-12></div>');
 	const div = $('<div class="historial" id="historial"></div>');
-	const p =$('<p>'+winner+' le gano a '+loser+'en '+move+'movimientos</p>');
+	const p =$('<p>'+winner+' le gano a '+loser+'en '+move+' movimientos</p>');
 	const h5 = $('<h5>Comentarios</h5>');
 	header.append(inicio,icon,historia);
 	section.append(header);
@@ -35,14 +35,16 @@ const Comments = (winner, loser, move, id) =>{
 						console.log(state.comentario);	
 
 						const add = $('<h5>Agregar comentario</h5>');
+						const form = $('<form></form>');
 						const p3 = $('<p>Tu nombre: <input type="text" id="nombre" class="name"></p>');
 						const p4 = $('<p>Tu Comentario: <textarea name="comentario" id="text_comment" cols="30" rows="10"></textarea></p>');
 						const btn = $('<button><a href="#" id="send">ENVIAR</a></button>');
 						const response = $('<div class="response">Tu comentario ha sido enviado satisfactoriamente</div>');
 
 						section.append(add);
-						section.append(p3,p4);
-						section.append(btn);
+						section.append(form);
+						form.append(p3,p4);
+						form.append(btn);
 						section.append(response);
 
 
@@ -73,7 +75,9 @@ const Comments = (winner, loser, move, id) =>{
 									section.append(final);
 									final.append(pname,pconte);
 
-									
+									form[0].reset();
+
+
 
 									}
 										
