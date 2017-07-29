@@ -40,11 +40,6 @@ const History = (winner, loser, move) =>{
 			    "number_of_turns_to_win": move,
 			}*/
 
-	
-
-			
-
-
 		
 	
 	$('#comentar').on('click', (e)=>{

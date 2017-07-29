@@ -47,9 +47,7 @@ const Play = (player1, player2) =>{
 	div3.append(btn6,btn7,btn8);
 
 	section.append(space);
-	section.append(p1, span1,p2, span2,p3,btn_new,btn_his);
-
-	
+	section.append(p1, span1,p2, span2,p3,btn_new,btn_his);	
 
 
 $(function() {
@@ -98,12 +96,12 @@ $(function() {
 				$.each(newHistoria, function(index,ele){
 					$('#historial').append('<p>'+newHistoria.winner_player+' le gano a '+newHistoria.loser_player+'en '+newHistoria.number_of_turns_to_win+' movimientos</p>');
 					$('#historial').append('<span><a href="#" id="comentar">Comentar</a></span>');
-				})
+				});
+      $('section').replaceWith(History(jug1, jug2, mov)); 
+        
 			}
 		});
 
-			
-			$('section').replaceWith(History(jug1, jug2, mov));	
 
 		});
 
