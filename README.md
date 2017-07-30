@@ -10,7 +10,7 @@
     <li>Comentarios</li>
 </ul>
 
-<h5>Pantallas -descripción</h5>
+<h5>Pantallas - descripción</h5>
 <ol>
     <li>La primera pantalla solo es el inicio del juego, al presionar el botón de "Iniciar", me lleva ala segunda pantalla.</li>
     <li>La segunda pantalla pide los nombres de los 2 jugadores a participar.</li>
