@@ -65,23 +65,26 @@ h1{
 }
 
 /*PLAYERS*/
-#second{
-  background-image: url('../img/bg2.jpg');
+#wallpaper{
+  background-image: url('../img/bg8.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   height: 100vh;
 }
 header{
   display: flex;
   justify-content: flex-end;
-  padding: 4% 0;
   font-size: 0.85rem;
+  padding: 2% 0;
 }
 header span{
   margin: 0 5px;
 }
-form {
+header.second{
+  padding: 4% 0;
+}
+form#ingreso_players{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -103,51 +106,97 @@ form p input{
   display: block;
   margin: auto;
 }
+
 /*PLAY*/
+.turn {
+    margin-bottom:10px;
+  }
+.message{
 
-
-
-
-/*body h1 {
-  font-weight: normal;
 }
-body .turn {
-  margin-bottom: 10px;
+table {
+  border-collapse:collapse;
+  width:210px;
+  margin:0 auto;
 }
-body .square {
-  border-collapse: collapse;
-  width: 150px;
-  margin: 0 auto;
+td {
+      width:70px;
+      height:70px;
+      border:1px solid #555;
+      cursor:pointer;
+  }
+td:before {
+        font-size:1.5em;
+        line-height:1;
+      }
+td.cross:before {
+    content:"x";
+    color:#3CB108;
+  }
+td.circle:before {
+  content:"o";
+  color:#402FC2;
 }
-body .square .botones {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #555;
-  cursor: pointer;
-  background-color: transparent;
+.reset {
+    background:#555;
+    border:1px solid #333;
+    padding:5px 10px;
+    color:#FFF;
+    cursor:pointer;
+    font-family:"Roboto", Arial, sans-serif;
+    text-transform:uppercase;
+  }
+.reset:hover {
+      opacity:0.8;
+    }
+.movimientos{
+  background-color: rgba(228,228,228,0.2); 
+  overflow: auto;
+  width: 70%;
+  margin: 40px auto;
+  padding: 20px;
 }
-body .square .botones:before {
-  font-size: 1.5em;
-  line-height: 1;
+.movimientos div{
+  background-color: rgba(232,229,229,0.8);
+  padding: 0 50px;
+  padding-bottom: 5px;
 }
-body .square .botones.cross:before {
-  content: "x";
-  color: lightblue;
+.play1{
+  float: left;
 }
-body .square .botones.circle:before {
-  content: "o";
-  color: pink;
+.play2{
+  float: right;
 }
-#newBoard {
-  background: #555;
-  border: 1px solid #333;
-  padding: 5px 10px;
-  color: #FFF;
-  cursor: pointer;
-  font-family: "Roboto", Arial, sans-serif;
-  text-transform: uppercase;
+button.historial{
+  float: right;
+  margin-top: 50px;
 }
-#newBoard:hover {
-  opacity: 0.8;
+/*HISTORIAL*/
+.group-historial, .comments{
+  border:1px solid #33479D;
+  padding: 15px;
+  background-color: rgba(232,229,229,0.8);
+  margin: 15px auto;
+  width: 50%;
+  overflow: auto;
 }
-*/
+.comment{
+  float: right;
+}
+h4{
+  margin:50px 0;
+}
+.input_text{
+  margin: 30px 0;
+}
+label{
+  vertical-align: top;
+}
+.send{
+  margin:30px;
+}
+.response{
+  padding: 10px;
+  color: #8E26AC;
+  font-weight: bold;
+}

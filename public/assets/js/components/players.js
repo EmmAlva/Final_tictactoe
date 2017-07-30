@@ -1,8 +1,8 @@
 'use strict';
 
 const Players = (update) =>{
-	const section = $('<section id ="second"  ></section>');
-	const header = $('<header class="center-block" ></header>');
+	const section = $('<section id ="wallpaper"  ></section>');
+	const header = $('<header class="center-block second" ></header>');
 	const inicio = $('<span>Inicio</span>');
 	const icon = $('<span>|</span>');
 	const historia = $('<span>Historia</span>');
@@ -24,8 +24,8 @@ const Players = (update) =>{
 	btn.on('click', (e) => {
 		e.preventDefault();	
 		
-		let player1 = $('#nombre1').val();
-		let player2 = $('#nombre2').val();		
+		let player1 = $('#nombre1').val().charAt(0).toUpperCase() + $('#nombre1').val().slice(1);
+		let player2 = $('#nombre2').val().charAt(0).toUpperCase() + $('#nombre2').val().slice(1);		
 
 		if ($('#nombre1').val() != "" && $('#nombre2').val() == ""){
 			$('#req_name1').text('');		

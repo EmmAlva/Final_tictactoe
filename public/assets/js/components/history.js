@@ -4,24 +4,18 @@ const History = (winner, loser, move) =>{
 	console.log(winner);
 	console.log(loser);
 	console.log(move);
-	const section = $('<section></section>');
-	const header = $('<header class="cabecera"></header>');
+	const section = $('<section id ="wallpaper"  ></section>');
+	const header = $('<header class="center-block third" ></header>');
 	const inicio = $('<span>Inicio</span>');
 	const icon = $('<span>|</span>');
 	const historia = $('<span>Historia</span>');
-	const col = $('<div class="col-lg-12"></div>');
-	const h1 = $('<h1>Historial<h1>');
-	const div = $('<div class ="historial" id="historial"></div>');
-	//const p = $('<p>'+winner+' le gano a '+loser+'en '+move+'movimientos</p>');
-	//const span = $('<span><a href="#">Comentar</a></span>');
-
-	header.append(inicio,icon,historia);
+	const container = $('<div id="content_historial" class="center-block txt-center"></div>')
+	const h2 = $('<h2>Historial<h2>');
+	const div = $('<div class ="lista_historial" id="historial"></div>');
 	section.append(header);
-	section.append(h1);
-	section.append(col);
-	section.append(div);
-//	div.append(p,span);
-
+	section.append(container);
+	header.append(inicio,icon,historia);
+	container.append(h2,div);	
 
 	$.ajax({
 		type:'GET',
@@ -29,19 +23,20 @@ const History = (winner, loser, move) =>{
 		success: function(data){
 			// console.log(data);
 			$.each(data, function(index,ele){
-			$('#historial').append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+' en '+data[index].number_of_turns_to_win+' movimientos</p>');
-			$('#historial').append('<button  id='+data[index].id+' class ="comment">Comentar</button>');
-			state.data = data[index];
-			state.id = data[index].id;
-			// console.log(state.id);
+				const group = $('<div class="group-historial"></div>');
+				$('#historial').append(group);
+				group.append('<p>'+data[index].winner_player+' le gano a '+data[index].loser_player+' en '+data[index].number_of_turns_to_win+' movimientos</p>');
+				group.append('<button  id='+data[index].id+' class ="btn btn_color comment">Comentar</button>');
+				state.data = data[index];
+				state.id = data[index].id;
+				// console.log(state.id);
 			});
 
 			$('.comment').on('click',function(e){
 				e.preventDefault();
 				var identificador = $(this).attr('id');
-				alert("btn " + identificador + " presionado");
+				// alert("btn " + identificador + " presionado");
 				console.log(data[identificador]);
-
 				getGame(identificador);
 			});	
 		}
@@ -53,7 +48,6 @@ const History = (winner, loser, move) =>{
 			$('section').replaceWith(Comments(json.winner_player, json.loser_player, json.number_of_turns_to_win, json.id));
 			})
 	}	
-
 	return section;
 	
 }
